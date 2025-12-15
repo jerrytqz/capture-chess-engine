@@ -1,4 +1,4 @@
-# chess-engine
+# capture-chess-engine
 
 ## Engine Setup & Usage
 
