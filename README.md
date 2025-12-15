@@ -35,3 +35,15 @@ python engine.py
 ```
 
 No additional configuration is required, though you may also have to set permissions to make the engine executable.
+
+## Sources
+
+- [Chess Programming Wiki](https://www.chessprogramming.org/)
+    - Search related info:
+        - https://www.chessprogramming.org/Alpha-Beta
+        - https://www.chessprogramming.org/Negamax
+        - https://www.chessprogramming.org/Horizon_Effect
+        - https://www.chessprogramming.org/Quiescence_Search
+        - https://www.chessprogramming.org/Transposition_Table
+    - Evaluation
+        - A lot of ideas listed in https://www.chessprogramming.org/Evaluation#Basic_Evaluation_Features
