@@ -209,6 +209,7 @@ def evaluate(board: chess.Board) -> int:
                         queue.append(move_sq)
             return len(visited)
 
+        # force king to side end game
         opp_space = king_freedom_space(board, chess.BLACK)
         mobility_bonus = max(0, 64 - opp_space) * 10 * scale
         score += mobility_bonus
@@ -234,7 +235,8 @@ def evaluate(board: chess.Board) -> int:
 
             if bk_file in [file - 1, file, file + 1] and bk_rank >= rank:
                 score -= 30
-
+                
+        # Prevent opponent from pushing
         for p in board.pieces(chess.PAWN, chess.BLACK):
             rank = chess.square_rank(p)
             file = chess.square_file(p)
