@@ -34,4 +34,4 @@ Once dependencies are installed, run the engine directly:
 python engine.py
 ```
 
-No additional configuration is required.
+No additional configuration is required, though you may also have to set permissions to make the engine executable.
