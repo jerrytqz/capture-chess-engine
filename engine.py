@@ -9,6 +9,7 @@ from chess.polyglot import zobrist_hash  # fast TT key?
 
 
 INF = 10_000
+DRAW_PENALTY = 250
 
 
 # Forced-capture move generation
@@ -108,11 +109,25 @@ def evaluate(board: chess.Board) -> int:
     """
     if board.is_game_over():
         result = board.result(claim_draw=True)
+
         if result == "1-0":
             return INF if board.turn == chess.WHITE else -INF
         elif result == "0-1":
             return INF if board.turn == chess.BLACK else -INF
-        return 0
+        else:
+            # Draw (stalemate, repetition, 50-move, insufficient material)
+            material = 0
+            for piece_type, val in PIECE_VALUES.items():
+                material += val * len(board.pieces(piece_type, chess.WHITE))
+                material -= val * len(board.pieces(piece_type, chess.BLACK))
+
+            # If side to move is winning, draw is bad
+            if material > 0:
+                return -DRAW_PENALTY
+            elif material < 0:
+                return DRAW_PENALTY
+            else:
+                return 0
 
     score = 0
 

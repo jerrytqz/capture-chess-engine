@@ -47,3 +47,4 @@ No additional configuration is required, though you may also have to set permiss
         - https://www.chessprogramming.org/Transposition_Table
     - Evaluation
         - A lot of ideas listed in https://www.chessprogramming.org/Evaluation#Basic_Evaluation_Features
+- Piece-Square Tables taken from https://github.com/dimdano/numbfish/blob/main/numbfish.py
