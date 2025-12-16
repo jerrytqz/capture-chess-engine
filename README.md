@@ -39,7 +39,7 @@ No additional configuration is required, though you may also have to set permiss
 ## Sources
 
 - [Chess Programming Wiki](https://www.chessprogramming.org/)
-    - Search:
+    - Search
         - https://www.chessprogramming.org/Alpha-Beta  
           Used in `search()` and `quiesce()` through alpha–beta pruning to reduce the search space.
 
