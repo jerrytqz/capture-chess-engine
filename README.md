@@ -61,3 +61,7 @@ No additional configuration is required, though you may also have to set permiss
 
 - Piece-Square Tables taken from https://github.com/dimdano/numbfish/blob/main/numbfish.py  
   PST values are applied in `evaluate()` to reward good piece placement. Black pieces use mirrored squares so one table works for both colors.
+
+- [XBoard / WinBoard Engine Protocol](https://www.gnu.org/software/xboard/engine-intf.html)  
+  Used to communicate with the GUI.
+
