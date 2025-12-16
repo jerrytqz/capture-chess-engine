@@ -40,11 +40,24 @@ No additional configuration is required, though you may also have to set permiss
 
 - [Chess Programming Wiki](https://www.chessprogramming.org/)
     - Search related info:
-        - https://www.chessprogramming.org/Alpha-Beta
-        - https://www.chessprogramming.org/Negamax
-        - https://www.chessprogramming.org/Horizon_Effect
-        - https://www.chessprogramming.org/Quiescence_Search
-        - https://www.chessprogramming.org/Transposition_Table
+        - https://www.chessprogramming.org/Alpha-Beta  
+          Used in `search()` and `quiesce()` through alpha–beta pruning to reduce the search space.
+
+        - https://www.chessprogramming.org/Negamax  
+          The core search formulation. Child positions are evaluated as `score = -search(...)`.
+
+        - https://www.chessprogramming.org/Horizon_Effect  
+          Addressed by switching to quiescence search at depth 0 so tactical capture sequences are fully resolved.
+
+        - https://www.chessprogramming.org/Quiescence_Search  
+          Implemented in `quiesce()`, which evaluates only capture moves (up to a fixed depth) before returning a stable position score.
+
+        - https://www.chessprogramming.org/Transposition_Table  
+          Positions are cached using Zobrist hashes to avoid re-searching identical positions.
+
     - Evaluation
-        - A lot of ideas listed in https://www.chessprogramming.org/Evaluation#Basic_Evaluation_Features
-- Piece-Square Tables taken from https://github.com/dimdano/numbfish/blob/main/numbfish.py
+        - A lot of ideas listed in https://www.chessprogramming.org/Evaluation#Basic_Evaluation_Features  
+          Used as guidance for material scoring, pawn structure (doubled/isolated/passed pawns), bishop pair bonuses, and basic endgame king activity.
+
+- Piece-Square Tables taken from https://github.com/dimdano/numbfish/blob/main/numbfish.py  
+  PST values are applied in `evaluate()` to reward good piece placement. Black pieces use mirrored squares so one table works for both colors.
