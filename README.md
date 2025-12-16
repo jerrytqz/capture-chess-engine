@@ -2,7 +2,7 @@
 
 ## Engine Setup & Usage
 
-The chess engine is implemented in a single file: **`engine.py`**.
+The chess engine is implemented in a single file: **`engine.py`**. It is tested to be compatible with xboard version 4.9.1.
 
 ### Requirements
 
